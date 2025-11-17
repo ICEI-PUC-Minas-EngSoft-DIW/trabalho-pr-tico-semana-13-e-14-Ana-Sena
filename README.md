@@ -9,15 +9,66 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 ## Informações do trabalho
 
-- Nome:
+- Nome: Ana Júlia de Sena Oliveira
 - Matricula:
-- Proposta de projeto escolhida:
-- Breve descrição sobre seu projeto:
+- Proposta de projeto escolhida: Site sobre Ballet Clássico - En Pointe
+- Breve descrição sobre seu projeto: Site dedicado ao ballet clássico, apresentando informações sobre espetáculos, figuras icônicas e a história do ballet.
+
+## Implementação - Visualização com Mapbox
+
+### Descrição da Implementação
+
+Foi implementada uma página de visualização interativa utilizando a biblioteca **Mapbox GL JS** para exibir em um mapa os lugares de origem dos espetáculos de ballet cadastrados no sistema.
+
+**Funcionalidades implementadas:**
+
+1. **Página de Mapa (`mapa.html`)**:
+   - Integração com Mapbox GL JS v2.15.0
+   - Mapa interativo com estilo claro (light-v11)
+   - Controles de navegação (zoom, rotação)
+
+2. **Marcadores Dinâmicos**:
+   - Cada espetáculo é representado por um marcador colorido no mapa
+   - Marcadores posicionados nas coordenadas geográficas (latitude/longitude) dos teatros de estreia
+   - Popups informativos ao clicar nos marcadores, contendo:
+     - Nome do espetáculo
+     - Teatro de estreia
+     - Cidade e país
+     - Ano de estreia
+     - Link para página de detalhes
+
+3. **Integração com CRUD**:
+   - Dados carregados dinamicamente da API JSON Server
+   - Suporte a adicionar, editar ou remover espetáculos via CRUD
+   - Mapa atualiza automaticamente quando novos espetáculos são adicionados
+
+4. **Legenda Interativa**:
+   - Legenda exibindo todos os espetáculos com suas respectivas cores
+   - Cores únicas para cada espetáculo facilitam a identificação
+
+5. **Ajuste Automático de Zoom**:
+   - O mapa ajusta automaticamente o zoom para mostrar todos os marcadores
+   - Padding adequado para melhor visualização
+
+**Dados de Localização Adicionados:**
+- O Lago dos Cisnes: Teatro Bolshoi, Moscou, Rússia (1877)
+- Don Quixote: Teatro Bolshoi, Moscou, Rússia (1869)
+- A Bela Adormecida: Teatro Mariinsky, São Petersburgo, Rússia (1890)
+
+**Biblioteca Utilizada:**
+- Mapbox GL JS v2.15.0
+- CDN: https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js
 
 **Print da tela com a implementação**
 
-<< Coloque aqui uma breve explicação da implementação feita nessa etapa>>
+### Tela 1: Mapa com todos os espetáculos
 
-<<  COLOQUE A IMAGEM TELA 1 AQUI >>
+Esta tela mostra o mapa interativo com todos os espetáculos cadastrados. Cada marcador colorido representa um espetáculo diferente, e ao clicar em um marcador, é exibido um popup com informações detalhadas.
+
+
+
+### Tela 2: Mapa após adicionar novo espetáculo via CRUD
+
+Esta tela demonstra a funcionalidade dinâmica do mapa. Após adicionar um novo espetáculo através da página de administração (CRUD), o mapa é atualizado automaticamente com o novo marcador, demonstrando a integração completa entre o sistema de gerenciamento de dados e a visualização.
 
 <<  COLOQUE A IMAGEM TELA 2 AQUI >>

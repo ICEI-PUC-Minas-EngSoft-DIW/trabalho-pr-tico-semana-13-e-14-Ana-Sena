@@ -441,11 +441,11 @@ footer {
     flex-direction: row;
     justify-content: stretch;
     gap: 20px;
-    width: 300px;
+    width: 450px;
 }
 
 .the-img img {
     width: 400px;
-   
+    height: auto;
     border-radius: 8px;
 }   
