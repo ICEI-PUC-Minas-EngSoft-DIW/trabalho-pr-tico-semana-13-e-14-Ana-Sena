@@ -65,10 +65,10 @@ Foi implementada uma página de visualização interativa utilizando a bibliotec
 
 Esta tela mostra o mapa interativo com todos os espetáculos cadastrados. Cada marcador colorido representa um espetáculo diferente, e ao clicar em um marcador, é exibido um popup com informações detalhadas.
 
-
+![alt text](public/assets/Img/imgs_readme/img1.png)
 
 ### Tela 2: Mapa após adicionar novo espetáculo via CRUD
 
 Esta tela demonstra a funcionalidade dinâmica do mapa. Após adicionar um novo espetáculo através da página de administração (CRUD), o mapa é atualizado automaticamente com o novo marcador, demonstrando a integração completa entre o sistema de gerenciamento de dados e a visualização.
 
-<<  COLOQUE A IMAGEM TELA 2 AQUI >>
+![alt text](public/assets/Img/imgs_readme/img2.png)
