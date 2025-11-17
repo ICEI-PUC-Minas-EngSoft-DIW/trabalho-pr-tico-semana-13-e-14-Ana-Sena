@@ -1,0 +1,451 @@
+/*Geral - Inicio */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #F5F0E9 !important;
+}
+
+header {
+    background-color: #4E7AB1;
+    text-decoration: none;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+/*Geral - Fim */
+
+/*Header - Inicio */
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4E7AB1;
+    width: 100%;
+}
+
+.logo img {
+    height: 139.92px;
+    width: 112.5px;
+    object-fit: cover;
+    margin-right: 0;
+}
+
+.logo-title {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.logo-title h1 {
+    font-family: 'Kapakana', cursive;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 1;
+    margin: 0;
+    color: #F5F0E9;
+}
+
+nav {
+    background-color: #102B53;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    text-decoration: none;
+
+}
+
+.nav-item {
+    color: #F5F0E9;
+    font-family: "Afacad", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 30px;
+    /*padding: 14px 20px;*/
+}
+.nav-item:hover {
+    background-color: #4E7AB1;
+    color: #4E7AB1;
+    border-radius: 8px;
+}
+
+.searcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #102B53;
+}
+
+.searcher input[type="search"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+}
+
+.searcher button {
+    padding: 10px 20px;
+    font-family: "Afacad", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #4E7AB1;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.searcher button:hover {
+    background-color: #7D9FC0;
+}
+
+/*Header - Fim */
+
+/*Main - Inicio */
+    /*Slider - Início*/
+.slider{
+    font-family: 'Afacad', sans-serif;
+    font-weight: 400;
+    position: relative;
+    width: 100%;
+    max-width: 1250px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-left: 10px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    text-align: center;
+    position: relative;
+    min-width: 100%; 
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: brightness(65%);
+    border-radius: 10px;
+}
+
+/*----Legenda----*/
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: #F5F0E9;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);;
+    font-size: 1.2em;
+}
+/*----Botões----*/
+.btn.prev, .btn.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+   
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/*----Dots----*/
+.dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+      width: 12px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dot.active {
+      background: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .slide img {
+        height: 300px;
+      }
+      .caption {
+        font-size: 1em;
+        padding: 15px;
+      }
+    }
+
+    /*Slider - Fim*/
+
+
+.welcome-section {
+    
+    text-align: justify !important;
+    background-color: #4E7AB1;
+    margin-top: 95px;
+    margin-bottom: 100px;
+    border-radius: 11px;
+}
+
+.welcome-section p {
+    font-family: 'Afacad', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.5;
+    color: #F5F0E9;
+    max-width: 1250px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.cta-section h3 {
+    font-family: 'Afacad', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    margin-left: 55px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.cta-images {
+    flex-wrap: wrap;
+    gap: 100px;
+    margin-bottom: 10px;
+}
+
+.cta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-item img {
+    display: block;
+    border-radius: 8px;
+}
+
+.cta-text {
+    margin-top: 16px;
+    font-family: 'Afacad', sans-serif;
+    font-size: 24px;
+    color: #000;
+    text-align: justify;
+}
+
+/*Main - Fim */
+
+/*Footer - Inicio */
+footer {
+    background-color: #102B53;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 60px;
+    text-align: left;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 150px;
+
+}
+
+.sobre {
+    flex: 1 1 45%;
+    min-width: 260px;
+    font-family: 'Afacad', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #F5F0E9;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    margin-right: 100px;
+}
+
+.sobre h4 {
+    font-family: 'Afacad', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #F5F0E9;
+    margin-bottom: 40px;
+    text-align: start;
+
+    
+}
+
+.sobre p{
+    text-align: justify;
+}
+
+.aluna {
+    flex: 1 1 45%;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;   /* h4 no topo, conteúdo abaixo */
+    gap: 12px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.aluna h4 {
+    font-family: 'Afacad', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #F5F0E9;
+    margin-left: 20px;
+    text-align: start;
+}
+
+/* linha que contém imagem + texto */
+.aluna-row {
+    display: flex;
+    flex-direction: row;      /* imagem à esquerda, texto à direita */
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.aluna img {
+   
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.aluna .aluna-text {
+    display: flex;
+    flex-direction: column;   /* garante que os <p> fiquem um embaixo do outro */
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.aluna p {
+    font-family: 'Afacad', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #F5F0E9;
+    margin: 0;
+    text-align: justify;
+}
+
+.direitos {
+    flex-basis: 100%;      
+    order: 3;              
+    display: flex;
+    justify-content: center; 
+    margin-top: 100px;
+}
+
+.direitos p {
+    font-family: 'Afacad', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #F5F0E9;
+    margin: 0;
+    text-align: center;    
+}
+
+/* responsivo: empilha imagem e texto em telas pequenas */
+@media (max-width: 768px) {
+    .aluna {
+        align-items: center;
+        text-align: center;
+    }
+    .aluna-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .aluna img {
+        width: 160px;
+        height: auto;
+    }
+    .aluna .aluna-text { align-items: center; }
+}
+
+/*Footer - Fim */
+
+/*Detalhes.html*/
+
+/*Main - Inicio*/
+/*---Informações---*/
+
+.informações-espetaculo{
+    font-family: 'Afacad', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+    max-width: 1250px;
+    margin: 50px 0 50px 0;
+    padding: 20px;
+    background-color: #7D9FC0;
+    border-radius: 11px;
+    text-align: justify !important;
+}
+
+.informações-espetaculo h3{
+    margin: 30px 0 20px 0;
+    font-size: 35px;
+    font-weight: 700;
+    
+}
+
+.informações-espetaculo img{
+    display: block;
+    width: 70%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 3px;
+    
+}
+
+/*---Mais Imagens---*/
+.the-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    gap: 20px;
+    width: 300px;
+}
+
+.the-img img {
+    width: 400px;
+   
+    border-radius: 8px;
+}   

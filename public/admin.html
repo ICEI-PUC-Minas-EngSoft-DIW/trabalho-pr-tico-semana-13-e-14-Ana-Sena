@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - En Pointe</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Kapakana:wght@300..400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .list-section {
+            margin-top: 30px;
+        }
+        .espetaculo-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .btn-group-item {
+            margin-top: 10px;
+        }
+        .alert {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between p-3">
+            <img src="assets/Img/ballerina.png" alt="En Pointe Logo" class="img-fluid" style="max-height:140px; width:auto;">
+            <a class="logo-title text-center flex-grow-1" href="index.html">
+                <h1>En Pointe - Administração</h1>
+            </a>
+        </div>
+        <nav class="navbar navbar-expand-md" style="background-color:#102B53;">
+            <div class="container-fluid">
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    ☰
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item"><a href="index.html" class="nav-link text-light fs-4">Voltar ao Site</a></li>
+                        <li class="nav-item"><a href="admin.html" class="nav-link text-light fs-4">Administração</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-container my-5">
+        <h2 class="mb-4">Gerenciamento de Espetáculos</h2>
+
+        <!-- Mensagens de feedback -->
+        <div id="alert-container"></div>
+
+        <!-- Formulário de Cadastro/Edição -->
+        <div class="form-section">
+            <h3 id="form-title">Cadastrar Novo Espetáculo</h3>
+            <form id="espetaculo-form">
+                <input type="hidden" id="espetaculo-id" name="id">
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="nome" class="form-label">Nome do Espetáculo *</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="titulo" class="form-label">Título *</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="resumo" class="form-label">Resumo *</label>
+                    <textarea class="form-control" id="resumo" name="resumo" rows="3" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="origens" class="form-label">Origens</label>
+                    <textarea class="form-control" id="origens" name="origens" rows="3"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="trama" class="form-label">Trama</label>
+                    <textarea class="form-control" id="trama" name="trama" rows="4"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="coreografia" class="form-label">Coreografia</label>
+                    <textarea class="form-control" id="coreografia" name="coreografia" rows="3"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="legado" class="form-label">Legado</label>
+                    <textarea class="form-control" id="legado" name="legado" rows="3"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagem" class="form-label">URL da Imagem Principal *</label>
+                    <input type="text" class="form-control" id="imagem" name="imagem" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Imagens Adicionais (JSON Array)</label>
+                    <textarea class="form-control" id="mais-imagens" name="mais_imagens" rows="4" 
+                        placeholder='[{"id": 1, "imagem": "assets/Img/exemplo1.jpg"}, {"id": 2, "imagem": "assets/Img/exemplo2.jpg"}]'></textarea>
+                    <small class="form-text text-muted">Formato: Array JSON com objetos contendo "id" e "imagem"</small>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Cadastrar</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-btn" style="display:none;" onclick="limparFormulario()">Cancelar Edição</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Lista de Espetáculos -->
+        <div class="list-section">
+            <h3>Espetáculos Cadastrados</h3>
+            <div id="espetaculos-list">
+                <p class="text-muted">Carregando...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-3">
+        <div class="direitos">
+            <p>&copy; 2025 En Pointe. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="assets/scripts/app.js"></script>
+    <script>
+        let espetaculosList = [];
+
+        // Carregar lista de espetáculos ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarListaEspetaculos();
+            
+            // Configurar submit do formulário
+            document.getElementById('espetaculo-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                salvarEspetaculo();
+            });
+        });
+
+        // Carregar lista de espetáculos
+        async function carregarListaEspetaculos() {
+            try {
+                espetaculosList = await buscarTodosEspetaculos();
+                exibirListaEspetaculos();
+            } catch (error) {
+                mostrarAlerta('Erro ao carregar lista de espetáculos', 'danger');
+            }
+        }
+
+        // Exibir lista de espetáculos
+        function exibirListaEspetaculos() {
+            const container = document.getElementById('espetaculos-list');
+            
+            if (espetaculosList.length === 0) {
+                container.innerHTML = '<p class="text-muted">Nenhum espetáculo cadastrado.</p>';
+                return;
+            }
+
+            let html = '';
+            espetaculosList.forEach(espetaculo => {
+                html += `
+                    <div class="espetaculo-item">
+                        <h5>${espetaculo.nome}</h5>
+                        <p class="text-muted">${espetaculo.titulo}</p>
+                        <div class="btn-group-item">
+                            <button class="btn btn-sm btn-primary" onclick="editarEspetaculo(${espetaculo.id})">Editar</button>
+                            <button class="btn btn-sm btn-danger" onclick="confirmarDeletar(${espetaculo.id}, '${espetaculo.nome}')">Deletar</button>
+                            <a href="detalhes.html?id=${espetaculo.id}" class="btn btn-sm btn-info" target="_blank">Ver Detalhes</a>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Salvar espetáculo (criar ou atualizar)
+        async function salvarEspetaculo() {
+            const id = document.getElementById('espetaculo-id').value;
+            const maisImagensText = document.getElementById('mais-imagens').value.trim();
+            
+            let maisImagens = [];
+            if (maisImagensText) {
+                try {
+                    maisImagens = JSON.parse(maisImagensText);
+                } catch (e) {
+                    mostrarAlerta('Erro ao processar imagens adicionais. Verifique o formato JSON.', 'danger');
+                    return;
+                }
+            }
+
+            const espetaculo = {
+                nome: document.getElementById('nome').value,
+                titulo: document.getElementById('titulo').value,
+                resumo: document.getElementById('resumo').value,
+                origens: document.getElementById('origens').value,
+                trama: document.getElementById('trama').value,
+                coreografia: document.getElementById('coreografia').value,
+                legado: document.getElementById('legado').value,
+                imagem: document.getElementById('imagem').value,
+                mais_imagens: maisImagens
+            };
+
+            try {
+                if (id) {
+                    // Atualizar
+                    espetaculo.id = parseInt(id);
+                    await atualizarEspetaculo(id, espetaculo);
+                    mostrarAlerta('Espetáculo atualizado com sucesso!', 'success');
+                } else {
+                    // Criar
+                    await criarEspetaculo(espetaculo);
+                    mostrarAlerta('Espetáculo cadastrado com sucesso!', 'success');
+                }
+                
+                limparFormulario();
+                await carregarListaEspetaculos();
+            } catch (error) {
+                mostrarAlerta('Erro ao salvar espetáculo: ' + error.message, 'danger');
+            }
+        }
+
+        // Editar espetáculo
+        async function editarEspetaculo(id) {
+            try {
+                const espetaculo = await buscarEspetaculoPorId(id);
+                
+                if (!espetaculo) {
+                    mostrarAlerta('Espetáculo não encontrado', 'danger');
+                    return;
+                }
+
+                // Preencher formulário
+                document.getElementById('espetaculo-id').value = espetaculo.id;
+                document.getElementById('nome').value = espetaculo.nome || '';
+                document.getElementById('titulo').value = espetaculo.titulo || '';
+                document.getElementById('resumo').value = espetaculo.resumo || '';
+                document.getElementById('origens').value = espetaculo.origens || '';
+                document.getElementById('trama').value = espetaculo.trama || '';
+                document.getElementById('coreografia').value = espetaculo.coreografia || '';
+                document.getElementById('legado').value = espetaculo.legado || '';
+                document.getElementById('imagem').value = espetaculo.imagem || '';
+                document.getElementById('mais-imagens').value = JSON.stringify(espetaculo.mais_imagens || [], null, 2);
+
+                // Atualizar UI
+                document.getElementById('form-title').textContent = 'Editar Espetáculo';
+                document.getElementById('submit-btn').textContent = 'Atualizar';
+                document.getElementById('cancel-btn').style.display = 'inline-block';
+
+                // Scroll para o formulário
+                document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
+            } catch (error) {
+                mostrarAlerta('Erro ao carregar espetáculo: ' + error.message, 'danger');
+            }
+        }
+
+        // Confirmar deletar
+        function confirmarDeletar(id, nome) {
+            if (confirm(`Tem certeza que deseja deletar o espetáculo "${nome}"?`)) {
+                deletarEspetaculoHandler(id);
+            }
+        }
+
+        // Deletar espetáculo
+        async function deletarEspetaculoHandler(id) {
+            try {
+                await deletarEspetaculo(id);
+                mostrarAlerta('Espetáculo deletado com sucesso!', 'success');
+                await carregarListaEspetaculos();
+            } catch (error) {
+                mostrarAlerta('Erro ao deletar espetáculo: ' + error.message, 'danger');
+            }
+        }
+
+        // Limpar formulário
+        function limparFormulario() {
+            document.getElementById('espetaculo-form').reset();
+            document.getElementById('espetaculo-id').value = '';
+            document.getElementById('form-title').textContent = 'Cadastrar Novo Espetáculo';
+            document.getElementById('submit-btn').textContent = 'Cadastrar';
+            document.getElementById('cancel-btn').style.display = 'none';
+        }
+
+        // Mostrar alerta
+        function mostrarAlerta(mensagem, tipo) {
+            const container = document.getElementById('alert-container');
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${tipo} alert-dismissible fade show`;
+            alert.innerHTML = `
+                ${mensagem}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            container.innerHTML = '';
+            container.appendChild(alert);
+            
+            // Remover após 5 segundos
+            setTimeout(() => {
+                alert.remove();
+            }, 5000);
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+

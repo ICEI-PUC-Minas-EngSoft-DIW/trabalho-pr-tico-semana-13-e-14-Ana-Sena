@@ -1,4 +1,81 @@
 {
+  "espetaculos": [
+    {
+      "id": 1,
+      "nome": "O Lago dos Cisnes",
+      "titulo": "O Lago dos Cisnes: conheça um dos ballets de repertório mais famosos do mundo",
+      "resumo": "Em 4 de março de 1877, um novo balé estreou no Teatro Bolshoi em Moscou – O Lago dos Cisnes. Esta foi a primeira grande partitura de balé composta por Piotr Ilitch Tchaikovsky, que mais tarde escreveria e comporia O Quebra-Nozes e A Bela Adormecida.",
+      "origens": "Na verdade, não há evidências de onde surgiu a ideia do enredo de O Lago dos Cisnes, ou o que inspirou seu escritor. A teoria mais aceita é que o conteúdo do balé é baseado em um conto popular russo ou alemão.",
+      "trama": "Como muitas histórias de amor poderosas, o balé mágico O Lago dos Cisnes tem uma narrativa clássica de amor trágico, contando a história do amor condenado entre o Príncipe Siegfried e a Princesa Odette.",
+      "coreografia": "O Lago dos Cisnes tem algumas das coreografias mais exclusivas e icônicas da história do balé e é conhecido como uma das produções mais exigentes e icônicas para um corpo de balé dançar.",
+      "legado": "Muitas interpretações de O Lago dos Cisnes foram feitas. É hoje o balé mais apresentado no mundo e continua a encantar plateias do mundo todo.",
+      "imagem": "assets/Img/swan_lake.jpeg",
+      "mais_imagens": [
+        {
+          "id": 1,
+          "imagem": "assets/Img/swan-lake/swanL1.jpg"
+        },
+        {
+          "id": 2,
+          "imagem": "assets/Img/swan-lake/swanL2.jpg"
+        },
+        {
+          "id": 3,
+          "imagem": "assets/Img/swan-lake/swanL3.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Don Quixote",
+      "titulo": "Don Quixote: A Paixão e a Aventura do Cavaleiro da Triste Figura",
+      "resumo": "O ballet 'Don Quixote' é uma obra vibrante e cômica (coreografia de Marius Petipa, música de Ludwig Minkus), que se baseia em uma seção do romance de Cervantes.",
+      "origens": "O ballet de repertório Don Quixote é uma obra clássica e vibrante, baseada no famoso romance espanhol Dom Quixote de la Mancha de Miguel de Cervantes.",
+      "trama": "O ballet Don Quixote narra a história do fidalgo sonhador que, lendo romances de cavalaria, decide se tornar um cavaleiro andante e parte em busca de aventuras com seu escudeiro, Sancho Pança.",
+      "coreografia": "A coreografia do ballet Don Quixote, na versão de Marius Petipa (1869), é mundialmente famosa por sua explosão de virtuosismo e seu vibrante estilo espanhol.",
+      "legado": "O legado do ballet Don Quixote reside em sua capacidade de unir o rigor do balé clássico acadêmico com a vivacidade teatral das danças de caráter e folclóricas.",
+      "imagem": "assets/Img/donQ.jpeg",
+      "mais_imagens": [
+        {
+          "id": 1,
+          "imagem": "assets/Img/don-quixote/donQ1.jpg"
+        },
+        {
+          "id": 2,
+          "imagem": "assets/Img/don-quixote/donQ2.jpg"
+        },
+        {
+          "id": 3,
+          "imagem": "assets/Img/don-quixote/donQ3.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "A Bela Adormecida",
+      "titulo": "A História do Ballet A Bela Adormecida",
+      "resumo": "Inspirado no Conto de Fadas de Charles Perrault, o Balé A Bela Adormecida foi criado em 1980. A adaptação contou com a composição do russo Peter Ilych Tchaikovsky, libreto de Marius Petipa e Ivan Vsevolojsky, e coreografia de Marius Petipa.",
+      "origens": "O ballet 'A Bela Adormecida' ('The Sleeping Beauty') é universalmente considerado o ápice do balé clássico, tendo estreado em 1890 no Teatro Mariinsky em São Petersburgo, Rússia.",
+      "trama": "Prólogo - O Batizado: O rei Florestan e a rainha convidaram todas as fadas para serem as madrinhas do batizado de sua filha recém-nascida, Aurora.",
+      "coreografia": "A coreografia de 'A Bela Adormecida', criada por Marius Petipa, é uma obra-prima de rigor acadêmico e considerada a epítome do estilo clássico-imperial russo.",
+      "legado": "O legado de 'A Bela Adormecida' é monumental, sendo a obra frequentemente citada como a joia da coroa do balé clássico.",
+      "imagem": "assets/Img/bela_adormecida.png",
+      "mais_imagens": [
+        {
+          "id": 1,
+          "imagem": "assets/Img/sleeping-beauty/sleepingB1.jpg"
+        },
+        {
+          "id": 2,
+          "imagem": "assets/Img/sleeping-beauty/sleepingB2.jpg"
+        },
+        {
+          "id": 3,
+          "imagem": "assets/Img/sleeping-beauty/sleepingB3.jpg"
+        }
+      ]
+    }
+  ],
   "usuarios": [
     {
       "id": "187cb7e5-e097-4224-8bc7-b610c855e2b1",
